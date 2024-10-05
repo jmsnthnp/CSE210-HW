@@ -14,27 +14,29 @@ namespace ScriptureMemorizer
             LoadScriptures(filePath);  
         }  
 
-        private void LoadScriptures(string filePath)  
-        {  
-            try  
-            {  
-                var lines = File.ReadAllLines(filePath);  
-                foreach (var line in lines)  
-                {  
-                    var parts = line.Split('|');  
-                    if (parts.Length == 2)  
-                    {  
-                        var reference = new Reference(parts[0].Trim());  
-                        var text = parts[1].Trim();  
-                        _scriptures.Add(new Scripture(reference, text));  
-                    }  
-                }  
-            }  
-            catch (Exception ex)  
-            {  
-                Console.WriteLine("An error occurred while loading scriptures: " + ex.Message);  
-            }  
-        }  
+private void LoadScriptures(string filePath)
+{
+    try
+    {
+        string fileContent = File.ReadAllText(filePath);
+        string[] lines = fileContent.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
+
+        foreach (string line in lines)
+        {
+            var parts = line.Split('|');
+            if (parts.Length == 2)
+            {
+                var reference = new Reference(parts[0].Trim());
+                var text = parts[1].Trim();
+                _scriptures.Add(new Scripture(reference, text));
+            }
+        }
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine("An error occurred while loading scriptures: " + ex.Message);
+    }
+}
 
         public Scripture GetRandomScripture()  
         {  
