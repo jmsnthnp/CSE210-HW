@@ -8,8 +8,8 @@ namespace MindfulnessProgram
         private List<string> _prompts = new List<string>  
         {  
             "What are you grateful for today?",  
-            "Who has made a positive impact in your life?",  
-            "What is something that made you smile this week?",  
+            "Who are the people in your life that you are grateful for?",  
+            "What is something that happened recently which made you grateful?",  
             "What is a lesson you've learned that you're thankful for?",  
             "What is a simple pleasure you appreciate?"  
         };  
