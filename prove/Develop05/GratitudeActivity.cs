@@ -60,7 +60,7 @@ namespace MindfulnessProgram
             DateTime endTime = DateTime.Now.AddSeconds(_duration);  
             while (DateTime.Now < endTime)  
             {  
-                Console.Write("Enter something you are grateful for (or press Enter to finish): ");  
+                Console.Write("Enter those that you are grateful for (or press Enter to finish): ");  
                 string item = Console.ReadLine();  
                 if (string.IsNullOrWhiteSpace(item)) break;  
                 items.Add(item);  
